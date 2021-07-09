@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-“选修A”" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/09/%E2%80%9C%E9%80%89%E4%BF%AEA%E2%80%9D/">“选修A”</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/09/%E2%80%9C%E9%80%89%E4%BF%AEA%E2%80%9D/" class="archive-article-date">
+  	<time datetime="2021-07-09T13:59:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="盛最多水的容器"><a href="#盛最多水的容器" class="headerlink" title="盛最多水的容器"></a>盛最多水的容器</h1><p>引文：比较几个容器哪个储水量更大，直接注水测水体积貌似是个好办法啊，雀食（网络用语），这种方法是一种直接测量法，所以这种方法误差肯定是最小的，这种方法是具有我的知识产权的，嗯，没错它是我想出来的。但是如果几个容器动辄装个几十吨上百吨呢，那就很难了，因此人们开动智慧的大脑，以一种能够显著提升工作效率的名为算法的智慧结晶来解决这类问题。（刚刚接触计算机语言一学期，在学习了指针的基础上对双重指针的算作揣测吧，理解浅薄，如有理解错误，敬请指正）</p>
+<p><strong>题目</strong>：给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。（说明：你不能倾斜容器，且 n 的值至少为 2）</p>
+<p>这是一组关于容器的数据：<img src="C:\Users\WTD666\Desktop\创新实践作业\QQ图片20210708224256.jpg" alt="QQ图片20210708224256"></p>
+<p>我感觉作对这个题目很重要的一点是明白木桶的最大储水量取决于最短的木板。以上图片上的数据代表垂直高度。（之所以移动最短板是因为一开始 木板与距离已经是最大值了如果移动长板不管怎么移动 容量都是在减少的 因为短板的值没有改变但是距离一定是时间单了 所以我们只移动最短板 如果两个板的高度高度一致移动我们就left指针）*双指针从图片上的左右两端开始，哪边小就取哪个数，对这列数字“左右开弓”，由于能力有限我将把这个题目的算法打到下面，接下来通过对这段代码的浅薄理解来对这个题目进行我的一些理解，//之后为笔者标注，望指正。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int maxArea(int[] height) &#123;//对运用双指针的说明，变量是容器的垂直高度，对于数据的处理方法是*处提到的。</span><br><span class="line">        int l = 0, r = height.length - 1;</span><br><span class="line">        int ans = 0;//这点是赋初值，相信新手也能明白</span><br><span class="line">        while (l &lt; r) &#123;</span><br><span class="line">            int area = Math.min(height[l], height[r])//取最小的垂直高度// * (r - l);</span><br><span class="line">            ans = Math.max(ans, area);</span><br><span class="line">            if (height[l] &lt;= height[r]) &#123;</span><br><span class="line">                ++l;//使指针移动，即改变l或r的值</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                --r;//与上同</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>容器容量V=min（x，y）*t</p>
+<p>*x，y代表的是指针所对应的数，t代表的是两指针的距离。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">双指针的初步涉猎</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/09/%E2%80%9C%E9%80%89%E4%BF%AEA%E2%80%9D/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-“选修S”" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -480,6 +561,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">关于“markdown”的学习心得</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">双指针的初步涉猎</a>
               </li>
             
             <div class="clearfix"></div>
